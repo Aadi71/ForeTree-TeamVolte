@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GST Calculator</title>
+</head><style>body{
+    background-image:url("{% static '.jpg' %}");
+        background-repeat:no-repeat;
+        background-size: cover;}
+        </style>
+<body>
+    <form method="post" action="http://127.0.0.1:8000/GST_Calculator/">
+        <h3 align="right"><a href="http://127.0.0.1:8000/home/" title="Home"><font color="#00008B">Home</a></font></h3>
+        {% csrf_token %}
+        Enter amount of product-<input type="textbox" name="d"><br>
+        Enter Quantity of product-<input type="textbox" name="b"><br>
+        Enter the GST Rate of product-<input type="textbox" name="a"><br>
+        <input type="submit">
+      </form>
+      <font size=4>The Final Amount is Rs.</font>{{c}}
+</body>
+</html>

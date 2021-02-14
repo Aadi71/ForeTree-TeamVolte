@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electricity Bill Estimator</title>
+</head>
+<body>
+    <form method="post" action="http://127.0.0.1:8000/GST_Calculator/">
+        <h3 align="right"><a href="http://127.0.0.1:8000/home/" title="Home"><font color="#00008B"></font>Home</a></h3>
+        {% csrf_token %}
+        Price of a unit- <input type="textbox" name="unit"><br>
+        Enter Quantity of product-<input type="textbox" name="b"><br>
+        Enter the GST Rate of product-<input type="textbox" name="a"><br>
+        <input type="submit">
+    </form>
+    <font size=4>The Final Amount is Rs.</font>{{c}}
+
+
+</body>
+</html>
